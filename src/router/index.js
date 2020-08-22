@@ -7,6 +7,7 @@ import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import Quiz from '@/components/Quiz.vue'
 import Game from '@/components/Game.vue'
+import Instructions from '@/components/Instructions.vue'
 import NotFound from '@/components/NotFound.vue'
 Vue.use(VueRouter);
 
@@ -48,6 +49,13 @@ const router = new VueRouter({
       path: '/game', 
       component: Game,
       name: 'game',
+      props: true,
+    },
+
+    {
+      path: '/instructions', 
+      component: Instructions,
+      name: 'instructions',
       props: true,
     },
       

@@ -8,6 +8,7 @@
           <li><a><router-link to="/quiz">Quiz</router-link></a></li>
           <li><a><router-link to="/login">Login</router-link></a></li>
           <li><a><router-link to="/register">Register</router-link></a></li>
+          <li><a><router-link to="/instructions">Instructions</router-link></a></li>
         </ul>
         <div>
           <h3 v-if="user">{{user.name}}</h3>
