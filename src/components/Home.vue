@@ -4,7 +4,7 @@
       <a class="btn_logout" @click="logOut">Log Out</a>
     </div>
     <div class="wrapper">
-      <input v-model="buscador" type="text" class="validate input" placeholder="Qué jugador buscas?">
+      <input v-model="search" type="text" class="validate input" placeholder="Qué jugador buscas?">
     </div>
     <div class="container_button">
       <div class="button"><router-link class="link" to="/game">Play</router-link></div>
@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="puntaje in Buscador" :key="puntaje.id">
+          <tr v-for="puntaje in Search" :key="puntaje.id">
             <td>{{puntaje.fecha}}</td>
             <td>{{puntaje.usuario.nombre}}</td>
             <td>{{puntaje.puntaje}}/3</td>
@@ -44,15 +44,15 @@ export default {
   data() {
     return {
       score:[],
-      buscador: ""
+      search: ""
     }
   },
   computed: {
     user() {
       return this.$store.state.user;
     },
-    Buscador(){
-      return this.score.filter((puntaje)=> puntaje.usuario.nombre.includes(this.buscador))
+    Search(){
+      return this.score.filter((puntaje)=> puntaje.usuario.nombre.includes(this.search))
     }
   },
   methods: {
